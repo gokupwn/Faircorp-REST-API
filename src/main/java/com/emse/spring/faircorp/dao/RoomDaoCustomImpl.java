@@ -19,4 +19,8 @@ public class RoomDaoCustomImpl implements RoomDaoCustom{
                 .setParameter("name", name)
                 .getSingleResult();
     }
+
+    @Override
+    public  void deleteByBuilding(Long id){
+    }
 }
