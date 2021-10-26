@@ -13,10 +13,38 @@ public class Building {
     @OneToMany(mappedBy = "building")
     private Set<Room> rooms;
 
-    @Column(name = "outsideTemperature")
+
     private Double outsideTemperature;
 
+    public Building(){
 
+    }
 
+    public Building (Double outsideTemperature){
+        this.outsideTemperature = outsideTemperature;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Double getOutsideTemperature() {
+        return outsideTemperature;
+    }
+
+    public void setOutsideTemperature(Double outsideTemperature) {
+        this.outsideTemperature = outsideTemperature;
+    }
+
+    public Set<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(Set<Room> rooms) {
+        this.rooms = rooms;
+    }
 }

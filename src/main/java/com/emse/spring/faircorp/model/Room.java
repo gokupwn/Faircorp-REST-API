@@ -91,6 +91,14 @@ public class Room {
         this.targetTemperature = targetTemperature;
     }
 
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
+
     public Room (){
 
     }
