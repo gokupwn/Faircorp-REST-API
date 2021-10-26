@@ -32,6 +32,9 @@ public class Room {
     @OneToMany(mappedBy = "room")
     private Set<Window> windows;
 
+    @ManyToOne
+    private Building building;
+
     public Long getId() {
         return id;
     }
