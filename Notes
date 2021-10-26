@@ -1,0 +1,5 @@
+## Query Parameter
+?firstname=Hassan&lastname=AlAchek
+- we will use @RequestParam annotation
+
+
