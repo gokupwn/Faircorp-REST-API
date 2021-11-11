@@ -54,8 +54,8 @@ public class BuildingController {
         for (Room room: building.getRooms()) {
             windowDao.deleteByRoom(room.getId());
             heaterDao.deleteByRoom(room.getId());
-            roomDao.deleteByBuilding(buildingId);
         }
+        roomDao.deleteByBuilding(buildingId);
         buildingDao.deleteById(buildingId);
     }
 
