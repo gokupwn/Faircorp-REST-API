@@ -57,6 +57,10 @@ public class RoomController {
         return roomDao.findById(roomId).map(RoomDto::new).orElse(null);
     }
 
+    @GetMapping(path = "/buildings/{buildingId}")
+    public List<RoomDto> findRoomsByBuildingId(@PathVariable Long buildingId){
+        return roomDao.findRoomsByBuildingId(buildingId).stream().map(RoomDto::new).collect(Collectors.toList());
+    }
     @DeleteMapping(path = "/{roomId}")
     public void deleteRoom(@PathVariable("roomId") Long roomId){
 
