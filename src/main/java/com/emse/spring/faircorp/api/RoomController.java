@@ -5,8 +5,6 @@ import com.emse.spring.faircorp.dao.RoomDao;
 import com.emse.spring.faircorp.dao.WindowDao;
 import com.emse.spring.faircorp.dto.RoomDto;
 import com.emse.spring.faircorp.model.*;
-import org.hibernate.SQLQuery;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -61,6 +59,7 @@ public class RoomController {
     public List<RoomDto> findRoomsByBuildingId(@PathVariable Long buildingId){
         return roomDao.findRoomsByBuildingId(buildingId).stream().map(RoomDto::new).collect(Collectors.toList());
     }
+    
     @DeleteMapping(path = "/{roomId}")
     public void deleteRoom(@PathVariable("roomId") Long roomId){
 
