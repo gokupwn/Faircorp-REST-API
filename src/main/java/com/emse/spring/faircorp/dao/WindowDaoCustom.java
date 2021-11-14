@@ -9,6 +9,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public interface WindowDaoCustom {
+
+    List<Window> findWindowsByRoomId(Long roomId);
+
     List <Window> findRoomOpenWindows(Long id);
     /*
     * To Delete All Windows On A Specific Room

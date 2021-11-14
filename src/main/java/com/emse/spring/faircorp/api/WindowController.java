@@ -36,6 +36,10 @@ public class WindowController {
         return windowDao.findById(id).map(WindowDto::new).orElse(null);
     }
 
+    @GetMapping(path = "/rooms/{roomId}")
+    public List<WindowDto> finWindowsByRoomId(@PathVariable Long roomId){
+        return windowDao.findWindowsByRoomId(roomId).stream().map(WindowDto::new).collect(Collectors.toList());
+    }
     @PutMapping(path = "/{id}/switch")
     public WindowDto switchStatus(@PathVariable Long id) {
         Window window = windowDao.findById(id).orElseThrow(IllegalArgumentException::new);

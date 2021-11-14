@@ -15,6 +15,14 @@ public class WindowDaoCustomImpl implements WindowDaoCustom{
     private EntityManager em;
 
     @Override
+    public List<Window> findWindowsByRoomId(Long roomId){
+        String jpql = "select w from Window w where w.room.id = :roomId";
+        return em.createQuery(jpql, Window.class)
+                .setParameter("roomId", roomId)
+                .getResultList();
+    }
+
+    @Override
     public List<Window> findRoomOpenWindows(Long id) {
         String jpql = "select w from Window w where w.room.id = :id and w.windowStatus= :status";
         return em.createQuery(jpql, Window.class)
