@@ -25,7 +25,6 @@ class BuildingDaoTest {
     public void shouldFindRoomOpenWindows() {
         List<Window> result = buildingDao.findWindowsByBuilding(-11L);
 
-//        result.forEach(System.out::println);
         Assertions.assertThat(result)
                 .hasSize(4);
     }
