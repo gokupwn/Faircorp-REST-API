@@ -89,7 +89,7 @@ public class RoomController {
         return new RoomDto(room);
     }
 
-    @GetMapping(path = "/{roomId}/switchHeaters")
+    @PutMapping(path = "/{roomId}/switchHeaters")
     public RoomDto switchHeatersStatus(@PathVariable("roomId") Long roomId){
         Room room = roomDao.getById(roomId);
         for (Heater heater: room.getHeaters()){
